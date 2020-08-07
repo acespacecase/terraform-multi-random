@@ -1,5 +1,9 @@
 resource "random_id" "random" {
-  wrong = "this will fail"
+  keepers = {
+    uuid = uuid()
+  }
+
+  byte_length = 6
 }
 
 output "random" {
